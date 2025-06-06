@@ -1,0 +1,53 @@
+body{
+    background-color: #fff6dd;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+/*ids */
+#title{
+    text-align: center;
+    border-bottom: #2c291f solid 2px;
+
+    font-size: 2em;
+}
+
+/*classes*/
+.todolist {    
+    padding: 10px;
+    padding-left: 3em;
+    padding-right: 5em;
+
+    border-style: hidden;
+    border-radius: 25px;
+
+    margin-left: 15em;
+    margin-right: 15em;
+
+    box-shadow: 7px 5px 5px rgb(109, 103, 112);
+
+    background-color: #c9bd9b;
+
+    min-height: 75em;
+}
+
+.container{
+    display: flex;
+
+    flex-direction: row;
+
+    min-height: 75em;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.items{
+    border-right: rgb(82, 71, 51) dotted;
+
+    min-width: 70%;
+    max-width: 70%;
+}
+
+.notes{
+    padding-left: 10px;
+}
