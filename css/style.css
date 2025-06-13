@@ -48,6 +48,10 @@ body{
     max-width: 70%;
 }
 
+.items ul li{
+    list-style-type: none;
+}
+
 .notes{
     padding-left: 10px;
 }
