@@ -55,3 +55,7 @@ body{
 .notes{
     padding-left: 10px;
 }
+
+.item:checked + span{
+  text-decoration:line-through;
+}
