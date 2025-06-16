@@ -10,6 +10,10 @@ body{
 
     font-size: 2em;
 }
+#itList{
+    display: flex;
+    flex-direction: column-reverse;
+}
 
 /*classes*/
 .todolist {    
@@ -58,4 +62,8 @@ body{
 
 .item:checked + span{
   text-decoration:line-through;
+}
+
+.delete_hid{
+    display: none;
 }
