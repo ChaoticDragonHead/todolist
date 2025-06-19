@@ -1,4 +1,10 @@
-Project goals:
-- Dynamic checklist that will strikethrough items that are finished
-- The ability to add new items from the web page
-- The ability to add notes to todo list
+This is a project intended to create a basic TODO list web app that can add new entries, cross them off to mark as complete, delete entries, save entries to come back to later, and add notes to add extra context to various TODO list entries.
+
+What has been accomplished so far:
+- ToDo list has added the functionality to add and remove items
+- Clicking on a checkbox will add a strikethrough effect
+
+What needs to be accomplished:
+- Need to add the ability to sort list by different entries
+- Need to have the ability to add notes to entries and have the notes specifically linked to entries - this will adjust how the space between various entries are rendered if the notes are long
+- Need to add stylization
