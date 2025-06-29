@@ -48,6 +48,8 @@ function removeItem(parent){
 }
 
 function darkMode(){
+    //Dark mode switch function - changes the CSS class of the body to dark vs light based on whether the checkmark is checked or not
+    console.log("Dark mode switch function triggered")
     if (darkCheck.checked == true){
         body.setAttribute('class', 'dark');
     }
@@ -56,8 +58,28 @@ function darkMode(){
     }
 }
 
+function addStore(target, textInp){
+    //Function to adjust the local storage value for various inputs - used for both the test and the list
+    console.log("add storage function triggered");
+    localStorage.setItem("test", textInp);
+    target.innerHTML = localStorage.getItem("test");
+}
+
 //console.log line to verify that script is functioning on the web page, used for troubleshooting and testing
 console.log("Successfully added script to page")
+
+//Local storage test
+localStorage.setItem("test", "this is a test for local storage");
+
+let localTest = document.getElementById('locTest');
+let testInp = document.getElementById('textStoreInp');
+localTest.innerHTML = localStorage.getItem("test");
+
+testInp.addEventListener('keydown', function(event){
+        if(event.key === 'Enter'){
+            addStore(localTest, this.value);
+        }
+    });
 
 //Establishes the button to add items as well as the list to add items to. 
 let but1 = document.getElementById('butt1');
@@ -71,6 +93,7 @@ but1.addEventListener('click', () => {
     addItem(list);
 });
 
+//Dark mode switch - see the .dark in CSS. 
 let body = document.querySelector('body');
 let darkCheck = document.getElementById('darklight');
 darkCheck.addEventListener('click', ()=>{

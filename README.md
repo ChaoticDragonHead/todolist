@@ -8,3 +8,5 @@ What needs to be accomplished:
 - Need to add the ability to sort list by different entries
 - Need to have the ability to add notes to entries and have the notes specifically linked to entries - this will adjust how the space between various entries are rendered if the notes are long
 - Need to add stylization
+
+Note for next time - I have done some rework on the project and how events are handled. It has been fine in general, but this could pose an issue with scaleable projects. Make sure to have things be modular in the future so that adjustments in project goals can be dealt with with minimal rework.
