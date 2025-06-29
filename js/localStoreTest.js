@@ -11,8 +11,6 @@ function addStore(target, textInp){
 }
 
 //Non-functions
-localStorage.setItem("test", "this is a test for local storage");
-
 let localTest = document.getElementById('locTest');
 let testInp = document.getElementById('textStoreInp');
 localTest.innerHTML = localStorage.getItem("test");
