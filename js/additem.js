@@ -1,10 +1,10 @@
 //Functions
 //Note - all functions have a console.log line at the top to verify that the function has been called. This is for testing purposes
-function addItem(parent){
+function addItem(parent, IDS){
     console.log("Add Item Function triggered")
 
     //Created new id to assign to new item
-    let newId = ids.length + 1;
+    let newId = IDS.length + 1;
 
     //Creates the elements to be added - newItem is the parent that will hold the other items such as the input, text, and button
     let newItem = document.createElement('li');
@@ -15,7 +15,10 @@ function addItem(parent){
 
     //Assigned new id to newitem and added it to ids array for storage
     newItem.setAttribute('id', newId.toString());
-    ids.push(newId.toString());
+    IDS.push(newId.toString());
+
+    let stringedIDs = JSON.stringify(IDS);
+    localStorage.setItem("idList", stringedIDs);
 
     //Delete button creation and added event listener for a click so that I can establish additional functions. The button is not rendered by the browser until an entry is fully added.
     rem.textContent = "Delete Item"
@@ -97,18 +100,27 @@ console.log("Successfully added script to page")
 
 //Sets array of values for storing values of list, and ids array for storing item ids
 let values = [];
-let ids = [];
+
+if(localStorage.getItem("idList")){
+    let storedIds = localStorage.getItem("idList");
+    let ids = JSON.parse(storedIds);
+
+    console.log(ids);
+}
+else{
+    let ids = [];
+}
 
 //Establishes the button to add items as well as the list to add items to. 
 let but1 = document.getElementById('butt1');
 const list = document.getElementById('itList');
 
 //Adds the first list item so that the user can begin typing their first entry. This is done to make things a little more intuitive for the user
-addItem(list);
+addItem(list, ids);
 
 //Event listener for click event. Added blank function so that I can pass arguments into the function itself. The function breaks if you add in any arguments without having this blank, buffer function.
 but1.addEventListener('click', () => {
-    addItem(list);
+    addItem(list, ids);
 });
 
 //Dark mode switch - see the .dark in CSS. 
