@@ -85,8 +85,9 @@ function addStore(target, textInp){
 //console.log line to verify that script is functioning on the web page, used for troubleshooting and testing
 console.log("Successfully added script to page")
 
-//Sets array of values for storing values of list
+//Sets array of values for storing values of list, and ids array for storing item ids
 let values = [];
+let ids = [];
 
 //Establishes the button to add items as well as the list to add items to. 
 let but1 = document.getElementById('butt1');
