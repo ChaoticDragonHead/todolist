@@ -12,7 +12,7 @@ function addItem(parent){
     //Delete button creation and added event listener for a click so that I can establish additional functions. The button is not rendered by the browser until an entry is fully added.
     rem.textContent = "Delete Item"
     rem.addEventListener('click', () =>{
-        removeItem(newItem);
+        removeItem(newItem, text.textContent);
     });
     rem.setAttribute('class', 'delete_hid');
 
@@ -37,14 +37,33 @@ function addText(chil1, chil2, butt){
     console.log("Add text function triggered");
 
     chil2.textContent = chil1.value;
+    //Adds item to values array
+    values.push(chil1.value);
+
     chil1.setAttribute('type', 'checkbox');
     butt.setAttribute('class', 'delete');
+
+    //Prints vlaues length and items
+    console.log(values.length);
+    for(i in values){
+        console.log(values[i]);
+    };
+
+    localStorage.setItem("todos", values);
 }
 
-function removeItem(parent){
+function removeItem(parent, textVal){
     console.log("Remove Item Function triggered");
     //Removes the parent element of the rem button, allowing for the deletion of entries
     parent.remove();
+    
+    console.log(textVal); //Logs value to be removed, for testing
+
+    for(i in values){
+        if(values[i] == textVal){
+
+        }
+    }
 }
 
 function darkMode(){
@@ -58,8 +77,16 @@ function darkMode(){
     }
 }
 
+function addStore(target, textInp){
+    //Function to adjust the local storage value for various inputs - used for both the test and the list. Test values in localStoreTest.js
+    console.log("add storage function triggered");
+}
+
 //console.log line to verify that script is functioning on the web page, used for troubleshooting and testing
 console.log("Successfully added script to page")
+
+//Sets array of values for storing values of list
+let values = [];
 
 //Establishes the button to add items as well as the list to add items to. 
 let but1 = document.getElementById('butt1');
