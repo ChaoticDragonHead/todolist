@@ -3,12 +3,20 @@
 function addItem(parent){
     console.log("Add Item Function triggered")
 
+    //Created new id to assign to new item
+    let newId = ids.length + 1;
+
     //Creates the elements to be added - newItem is the parent that will hold the other items such as the input, text, and button
     let newItem = document.createElement('li');
     let inp = document.createElement('input');
     let text = document.createElement('span');
 
     let rem = document.createElement('button');
+
+    //Assigned new id to newitem and added it to ids array for storage
+    newItem.setAttribute('id', newId.toString());
+    ids.push(newId.toString());
+
     //Delete button creation and added event listener for a click so that I can establish additional functions. The button is not rendered by the browser until an entry is fully added.
     rem.textContent = "Delete Item"
     rem.addEventListener('click', () =>{
@@ -28,17 +36,19 @@ function addItem(parent){
     //This event must be added to the parent element otherwise it is much more difficult to access the various children.
     newItem.addEventListener('keydown', function(event){
         if(event.key === 'Enter'){
-            addText(inp, text, rem);
+            addText(inp, text, rem, newId.toString());
         }
     });
 }
 
-function addText(chil1, chil2, butt){
+function addText(chil1, chil2, butt, id){
     console.log("Add text function triggered");
 
     chil2.textContent = chil1.value;
     //Adds item to values array
-    values.push(chil1.value);
+    values.push(
+        {id: id, value: chil1.value}
+    );
 
     chil1.setAttribute('type', 'checkbox');
     butt.setAttribute('class', 'delete');
