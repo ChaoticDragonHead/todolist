@@ -20,3 +20,9 @@ testInp.addEventListener('keydown', function(event){
             addStore(localTest, this.value);
         }
     });
+
+    let clearBut = document.getElementById('clear');
+clearBut.addEventListener('click', ()=>{
+    localStorage.clear();
+    localTest.innerHTML = localStorage.getItem("test");
+})
